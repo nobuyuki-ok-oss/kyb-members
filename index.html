@@ -1,66 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会員専用ページ</title>
+<style>
+  body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f9f9f9; }
+  .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; width: 100%; max-width: 400px; }
+  input[type="password"] { width: 80%; padding: 10px; margin: 15px 0; border: 1px solid #ccc; border-radius: 4px; }
+  button { background-color: #0056b3; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+  button:hover { background-color: #004494; }
+  #hidden-content { display: none; text-align: left; }
+  .link-btn { display: block; background: #f1f1f1; padding: 12px; margin-bottom: 10px; text-decoration: none; color: #333; border-radius: 4px; text-align: center;}
+  .link-btn:hover { background: #e2e2e2; }
+  .error { color: red; font-size: 12px; display: none; margin-top: -10px; margin-bottom: 10px; }
+</style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ja"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1">&lt;title&gt;会員専用ページ&lt;/title&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f9f9f9; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; width: 100%; max-width: 400px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>input[type="password"] { width: 80%; padding: 10px; margin: 15px 0; border: 1px solid #ccc; border-radius: 4px; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>button { background-color: #0056b3; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>button:hover { background-color: #004494; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>#hidden-content { display: none; text-align: left; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.link-btn { display: block; background: #f1f1f1; padding: 12px; margin-bottom: 10px; text-decoration: none; color: #333; border-radius: 4px; text-align: center;}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.link-btn:hover { background: #e2e2e2; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.error { color: red; font-size: 12px; display: none; margin-top: -10px; margin-bottom: 10px; }</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="container" id="login-box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;会員専用ページ&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;パスワードを入力してください&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;input type="password" id="pwd" placeholder="パスワード"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;p class="error" id="error-msg"&gt;パスワードが間違っています&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="checkPassword()"&gt;ログイン&lt;/button&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div class="container" id="hidden-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;会員メニュー&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="【https://calendar.google.com/calendar/embed?src=kawasaki.young.baseball%40gmail.com&amp;ctz=Asia%2FTokyo】" target="_blank" class="link-btn"&gt;🗓 チームスケジュール&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="【https://forms.gle/2WD1noECBqp566sU9】" target="_blank" class="link-btn"&gt;⚾️ 用品購入フォーム&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="【https://www.netto.jp/kawasakiyoung-amicus/html_file/%E5%B7%9D%E5%B4%8E%E3%83%A4%E3%83%B3%E3%82%AF%E3%82%99_%E4%BC%9A%E5%89%87.pdf】" target="_blank" class="link-btn"&gt;📄 会則（PDF）&lt;/a&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function checkPassword() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>var password = document.getElementById("pwd").value;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>// ★ここが設定するパスワードです（例: kybi2026）</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (password === "kybi2026") {<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("login-box").style.display = "none";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("hidden-content").style.display = "block";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("error-msg").style.display = "block";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<div class="container" id="login-box">
+  <h2>会員専用ページ</h2>
+  <p>パスワードを入力してください</p>
+  <input type="password" id="pwd" placeholder="パスワード">
+  <p class="error" id="error-msg">パスワードが間違っています</p>
+  <button onclick="checkPassword()">ログイン</button>
+</div>
+
+<div class="container" id="hidden-content">
+  <h2>会員メニュー</h2>
+  <a href="【https://calendar.google.com/calendar/embed?src=kawasaki.young.baseball%40gmail.com&ctz=Asia%2FTokyo】" target="_blank" class="link-btn">🗓 チームスケジュール</a>
+  <a href="【https://forms.gle/2WD1noECBqp566sU9】" target="_blank" class="link-btn">⚾️ 用品購入フォーム</a>
+  <a href="【https://www.netto.jp/kawasakiyoung-amicus/html_file/%E5%B7%9D%E5%B4%8E%E3%83%A4%E3%83%B3%E3%82%AF%E3%82%99_%E4%BC%9A%E5%89%87.pdf】" target="_blank" class="link-btn">📄 会則（PDF）</a>
+</div>
+
+<script>
+  function checkPassword() {
+    var password = document.getElementById("pwd").value;
+    // ★ここが設定するパスワードです（例: kyb2026）
+    if (password === "kyb2026") { 
+      document.getElementById("login-box").style.display = "none";
+      document.getElementById("hidden-content").style.display = "block";
+    } else {
+      document.getElementById("error-msg").style.display = "block";
+    }
+  }
+</script>
+
 </body>
 </html>
