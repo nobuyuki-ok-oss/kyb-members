@@ -3,22 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>会員専用ページ</title>
+<title>川崎ヤング_会員ページ</title>
 <style>
   body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f9f9f9; }
-  .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; width: 100%; max-width: 400px; }
-  input[type="password"] { width: 80%; padding: 10px; margin: 15px 0; border: 1px solid #ccc; border-radius: 4px; }
-  button { background-color: #0056b3; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+  .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; /* 全体を中央揃えにする設定 */ }
+  
+  /* ★ロゴ画像のスタイル設定 */
+  .logo {
+    display: block;
+    margin: 0 auto 20px; /* 中央に配置し、下に余白を作る */
+    max-width: 150px; /* ロゴの最大幅（必要に応じて調整してください） */
+    height: auto;
+  }
+  
+  /* ★タイトルのスタイル設定（中央寄せ） */
+  h2 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center; /* タイトルテキストを中央揃えにする */
+  }
+  
+  input[type="password"] { width: 90%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+  button { background-color: #0056b3; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; width: 50%; }
   button:hover { background-color: #004494; }
-  #hidden-content { display: none; text-align: left; }
-  .link-btn { display: block; background: #f1f1f1; padding: 12px; margin-bottom: 10px; text-decoration: none; color: #333; border-radius: 4px; text-align: center;}
+  
+  #hidden-content { display: none; }
+  
+  /* ★会員メニューのボタンのスタイル設定 */
+  .link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ボタン内のテキストと絵文字も中央に */
+    background: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    font-weight: bold;
+  }
   .link-btn:hover { background: #e2e2e2; }
-  .error { color: red; font-size: 12px; display: none; margin-top: -10px; margin-bottom: 10px; }
+  .link-btn span { margin-left: 10px; } /* 絵文字とテキストの間隔 */
+  
+  .error { color: red; font-size: 12px; display: none; margin-top: -10px; margin-bottom: 15px; }
 </style>
 </head>
 <body>
 
 <div class="container" id="login-box">
+  <img src="170262_0.webp" alt="川崎ヤング ロゴ" class="logo">
   <h2>川崎ヤング_会員専用ページ</h2>
   <p>パスワードを入力してください</p>
   <input type="password" id="pwd" placeholder="パスワード">
@@ -27,16 +61,18 @@
 </div>
 
 <div class="container" id="hidden-content">
+  <img src="170262_0.webp" alt="川崎ヤング ロゴ" class="logo">
   <h2>川崎ヤング_会員メニュー</h2>
-  <a href="https://calendar.google.com/calendar/embed?src=kawasaki.young.baseball%40gmail.com&ctz=Asia%2FTokyo" target="_blank" class="link-btn">🗓 チームスケジュール</a>
-  <a href="https://forms.gle/2WD1noECBqp566sU9" target="_blank" class="link-btn">⚾️ 用品購入フォーム</a>
-  <a href="川崎ヤング_会則.pdf" target="_blank" class="link-btn">📄 会則（PDF）</a>
+  
+  <a href="https://calendar.google.com/calendar/embed?src=kawasaki.young.baseball%40gmail.com&ctz=Asia%2FTokyo" target="_blank" class="link-btn">🗓<span>会員用予定表</span></a>
+  <a href="https://forms.gle/2WD1noECBqp566sU9" target="_blank" class="link-btn">⚾️<span>用品購入フォーム</span></a>
+  <a href="川崎ヤング_会則.pdf" target="_blank" class="link-btn">📄<span>会則（PDF）</span></a>
 </div>
 
 <script>
   function checkPassword() {
     var password = document.getElementById("pwd").value;
-    // ★ここが設定するパスワードです（例: kyb2026）
+    // ★ご自身で設定したパスワードに変更してください
     if (password === "kyb2026") { 
       document.getElementById("login-box").style.display = "none";
       document.getElementById("hidden-content").style.display = "block";
